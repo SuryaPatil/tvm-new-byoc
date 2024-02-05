@@ -1,0 +1,12 @@
+g++ -w -std=c++17 -I/home/supatil/tvm/include -I/home/supatil/dlpack/include -I/home/supatil/dmlc-core/include codegen.cc -o codegen
+
+g++ -w -std=c++17 -I/home/supatil/tvm/include -I/home/supatil/dlpack/include -I/home/supatil/dmlc-core/include test.cc -o test -L/home/supatil/tvm/build -ltvm -lpthread -ldl
+
+g++ -w -std=c++17 -I/home/supatil/tvm/include -I/home/supatil/dlpack/include -I/home/supatil/dmlc-core/include codegen.cc -o codegen -L/home/supatil/tvm/build -ltvm -lpthread -ldl
+
+
+export TVM_HOME=/home/supatil/tvm
+export PYTHONPATH=$TVM_HOME/python:${PYTHONPATH}
+
+Note: Ensure that the path to libtvm.so is in the library search path. You can add the library path to the LD_LIBRARY_PATH environment variable:
+export LD_LIBRARY_PATH=/home/supatil/tvm/build:$LD_LIBRARY_PATH
