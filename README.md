@@ -15,7 +15,7 @@ Once you have built TVM, ensure that the path to libtvm.so is in the library sea
 `export LD_LIBRARY_PATH=/home/supatil/tvm/build:$LD_LIBRARY_PATH` 
 
 
-### Obtaining TVM Relay IR and LLVM IR of Single-Layered BERT model
+## Obtaining TVM Relay IR and LLVM IR of Single-Layered BERT model
 One purpose of this project is to explore how one can convert a single-layered BERT model into Apache TVM’s intermediate representation (IR) and subsequently transform this IR into an executable. The first step involves exporting the BERT model to ONNX.
 
 In the project directory, run:
