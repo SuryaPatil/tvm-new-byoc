@@ -1,5 +1,3 @@
-g++ -w -std=c++17 -I/home/supatil/tvm/include -I/home/supatil/dlpack/include -I/home/supatil/dmlc-core/include codegen.cc -o codegen
-
 g++ -w -std=c++17 -I/home/supatil/tvm/include -I/home/supatil/dlpack/include -I/home/supatil/dmlc-core/include test.cc -o test -L/home/supatil/tvm/build -ltvm -lpthread -ldl
 
 g++ -w -std=c++17 -I/home/supatil/tvm/include -I/home/supatil/dlpack/include -I/home/supatil/dmlc-core/include codegen.cc -o codegen -L/home/supatil/tvm/build -ltvm -lpthread -ldl
