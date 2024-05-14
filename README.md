@@ -33,5 +33,10 @@ Next, run execute the following command:
 
 This command lowers the single-layered BERT model to an LLVM IR and run an executable version of the model. You can see this IR in the newly created file `output.ll`. One problem with this LLVM source code is that it uses long for-loops to perform matrix multiplications. However, we want the RISC-V CPU's instructions to be written without these for-loops. Hence, teaching LLVM to generate source code that involves simple tensor multiplication instructions is a key goal/challenge in finishing this project. 
 
-## Writing C Code Generator for Relay IR
+## Writing Relay IR as C/C++
+The second approach of this project involves writing the Relay IR of the BERT model as C/C++. We can do this by implementing a codegen that generates C code for the subgraph and a C source module to integrate into TVM runtime module. This approach follows the tutorial: https://tvm.apache.org/docs/dev/how_to/relay_bring_your_own_codegen.html#.
 
+My implementation of the codegen is in the source files `codegen.h` and `codegen.c`
+
+### Install necessary packages
+I have found that running Apache TVM with C++ requires installing (`dmlc`) [https://github.com/dmlc/dlpack] and (`dmlc-core`) [https://github.com/dmlc/dmlc-core] 
