@@ -1,13 +1,16 @@
-# TVM-BYOC
-The goal of this project is to implement a codegen that generates C code for Relay IR subgraphs and a C source module. The C source module will be compiled by a TVM backend and deployed on a RISC-V CPU. 
+# TVM
+The goal of this project is to use the Apache TVM deep learning compiler framework to optimize the BERT language model and deploy it RISC-V CPU backend. So far, I have taken two approaches to accomplishing this. The first involves taking the BERT model's TVM Relay IR and converting it to an LLVM IR specific to our RISC-V+ extensions. The second approach involves taking the Relay IR and writing it as C/C++ that uses specially-named functions or inline assembly commands. These commands will then be given to a regulat LLVM RISC-V compiler. Both approaches are further discussed below, along with details on how to set up this project.  
 
-## Operating System
+## Project Setup
+Describes the necessary software used to run the source files in this repository.
+
+### Operating System
 The source files in this repository were tested on Ubuntu 22.
 
-## Installing Python
+### Installing Python
 I recommend using python 3.8 to run the Python files in this repository. 
 
-## Installing and Building TVM
+### Installing and Building TVM
 Install and build the latest version of TVM by following the instructions here: https://tvm.apache.org/docs/install/from_source.html. Also be sure to download a pre-built version of LLVM, as mentioned in the linked tutorial. Finally, make sure to install the Python dependencies mentioned near the bottom of tutorial.
 
 Once you have built TVM, ensure that the path to libtvm.so is in the library search path. You can add the library path to the LD_LIBRARY_PATH environment variable:
