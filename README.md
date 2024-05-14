@@ -39,4 +39,4 @@ The second approach of this project involves writing the Relay IR of the BERT mo
 My implementation of the codegen is in the source files `codegen.h` and `codegen.c`
 
 ### Install necessary packages
-I have found that running Apache TVM with C++ requires installing (`dmlc`) [https://github.com/dmlc/dlpack] and (`dmlc-core`) [https://github.com/dmlc/dmlc-core] 
+I have found that running Apache TVM with C++ requires installing (`dmlc`) [https://github.com/dmlc/dlpack] and [`dmlc-core`](https://github.com/dmlc/dmlc-core) 
