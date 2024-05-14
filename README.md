@@ -28,7 +28,7 @@ Next, run execute the following command:
 
 `python3.8 lower.py`
 
-This command lowers the single-layered BERT model to an LLVM IR and run an executable version of the model. You can see this IR in the newly created file `output.ll`
+This command lowers the single-layered BERT model to an LLVM IR and run an executable version of the model. You can see this IR in the newly created file `output.ll`. One problem with this LLVM source code is that it uses long for-loops to perform matrix multiplications. However, we want the RISC-V CPU's instructions to be written without these for-loops. Hence, teaching LLVM to generate source code that involves simple tensor multiplication instructions is a key goal/challenge in finishing this project. 
 
-### 
+## Writing C Code Generator for Relay IR
 
