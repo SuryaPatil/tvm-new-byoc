@@ -39,4 +39,15 @@ The second approach of this project involves writing the Relay IR of the BERT mo
 My implementation of the codegen is in the source files `codegen.h` and `codegen.c`
 
 ### Install necessary packages
-I have found that running Apache TVM with C++ requires installing [`dmlc`](https://github.com/dmlc/dlpack) and [`dmlc-core`](https://github.com/dmlc/dmlc-core) 
+I have found that running Apache TVM with C++ requires installing [`dmlc`](https://github.com/dmlc/dlpack) and [`dmlc-core`](https://github.com/dmlc/dmlc-core) . Clone both these repositories before compiling `codegen.c`
+
+### Compiling and Running 
+To compile the code generator, run 
+
+`g++ -w -std=c++17 -I/path/to/tvm/include -I/path/to/dlpack/include -I/path/to/dmlc-core/include codegen.cc -o codegen -L/path/to/tvm/build -ltvm -lpthread -ldl`
+
+Then, run the executable:
+
+`./codegen`
+
+One must still figure out how to register this codegen with the TVM backend and call it on the BERT Relay IR. 
